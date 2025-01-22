@@ -29,11 +29,11 @@ jobs:
       run: |-
         echo "old_link=$(cat configs/link.txt)" >> $GITHUB_ENV
         python clean.py > configs/link.txt
-        echo "link=$(cat configs/link.txt)" >> $GITHUB_ENV        
+        echo "link=$(cat configs/link.txt)" >> $GITHUB_ENV
     - name: create new tag based on link scraped
       if: env.link != env.old_link 
       run: |-
-        echo "tag=${{ env.link }}" | grep -oP '(tag=)|(\d\d\.\d\d?\.\d\d?)' | tr -d "\n" >> $GITHUB_ENV
+        echo "tag=${{ env.link }}" | grep -oP '(tag=)|(\d\d?\.\d\d\.\d\d\.\d\d\d)' | tr -d "\n" >> $GITHUB_ENV
     - name: Extract version from latest tag on repo
       if: env.link != env.old_link 
       uses: damienaicheh/extract-version-from-tag-action@v1.0.0
@@ -43,33 +43,11 @@ jobs:
     - name: Prepare link for curl
       if: env.link != env.old_link && env.tag != env.latest_tag
       run: |-
-        echo "version=${{ env.link }}" | grep -oP '(version=)|(\d\d\.\d\d?\.\d\d?)' | tr -d "\n" | tr  "."  "-" >> $GITHUB_ENV   
-    - name: Fetch link for full setup
-      if: env.link != env.old_link && env.tag != env.latest_tag
-      run: |-
-        python clean_full.py ${{env.version}} > configs/link_full.txt
-        echo "link_full=$(cat configs/link_full.txt)" >> $GITHUB_ENV
-    - name: Clear link_full_combined.txt
-      run: echo "" > configs/link_full_combined.txt
-    - name: Fetch link for full setup combined(Polaris/Vega + RDNA)
-      if: env.link != env.old_link && env.tag != env.latest_tag
-      run: |-
-        python clean_full_combined.py ${{env.version}} > configs/link_full_combined.txt
-        if [ -s configs/link_full_combined.txt ]; then
-          echo "link_full_combined=$(cat configs/link_full_combined.txt)" >> $GITHUB_ENV
-        fi
-    - name: Save new minimal setup
+        echo "version=${{ env.link }}" | grep -oP '(version=)|(\d\d?\.\d\d\.\d\d\.\d\d\d)' | tr -d "\n" | tr  "."  "-" >> $GITHUB_ENV
+    - name: Save new Driver-file
       if: env.link != env.old_link && env.tag != env.latest_tag
       run:  |-
         curl --create-dirs -O --output-dir "driver" '${{ env.link }}' -K configs/headers.txt --compressed
-    - name: Save new full setup
-      if: env.link != env.old_link && env.tag != env.latest_tag
-      run:  |-
-        curl --create-dirs -O --output-dir "driver" '${{ env.link_full }}' -K configs/headers.txt --compressed
-    - name: Save new full setup combined (Polaris/Vega + RDNA)
-      if: env.link != env.old_link && env.tag != env.latest_tag && env.link_full_combined
-      run: |-
-        curl --create-dirs -O --output-dir "driver" '${{ env.link_full_combined }}' -K configs/headers.txt --compressed
     - name: Generate new changelog
       if: env.link != env.old_link && env.tag != env.latest_tag
       run: |-
@@ -81,7 +59,7 @@ jobs:
         gh release upload ${{ env.tag }} ./driver/*.exe
     - name: Remove driver folder
       if: env.link != env.old_link && env.tag != env.latest_tag
-      run: rm -rf ./driver    
+      run: rm -rf ./driver
     - name: Commit report
       if: env.link != env.old_link && env.tag != env.latest_tag
       run: |-
