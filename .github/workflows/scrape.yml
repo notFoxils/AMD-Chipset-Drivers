@@ -33,7 +33,7 @@ jobs:
     - name: create new tag based on link scraped
       if: env.link != env.old_link 
       run: |-
-        echo "tag=${{ env.link }}" | grep -oP '(tag=)|(\d\d\.\d\d\.\d\d\.\d\d\d)' | tr -d "\n" >> $GITHUB_ENV
+        echo "tag=${{ env.link }}" | grep -oP '(tag=)|(\d\d?\.\d\d\.\d\d\.\d\d\d)' | tr -d "\n" >> $GITHUB_ENV
     - name: Extract version from latest tag on repo
       if: env.link != env.old_link 
       uses: damienaicheh/extract-version-from-tag-action@v1.0.0
@@ -43,7 +43,7 @@ jobs:
     - name: Prepare link for curl
       if: env.link != env.old_link && env.tag != env.latest_tag
       run: |-
-        echo "version=${{ env.link }}" | grep -oP '(version=)|(\d\d\.\d\d\.\d\d\.\d\d\d)' | tr -d "\n" | tr  "."  "-" >> $GITHUB_ENV
+        echo "version=${{ env.link }}" | grep -oP '(version=)|(\d\d?\.\d\d\.\d\d\.\d\d\d)' | tr -d "\n" | tr  "."  "-" >> $GITHUB_ENV
     - name: Fetch link for full setup
       if: env.link != env.old_link && env.tag != env.latest_tag
       run: |-
