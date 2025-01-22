@@ -44,19 +44,10 @@ jobs:
       if: env.link != env.old_link && env.tag != env.latest_tag
       run: |-
         echo "version=${{ env.link }}" | grep -oP '(version=)|(\d\d?\.\d\d\.\d\d\.\d\d\d)' | tr -d "\n" | tr  "."  "-" >> $GITHUB_ENV
-    - name: Fetch link for full setup
-      if: env.link != env.old_link && env.tag != env.latest_tag
-      run: |-
-        python clean_full.py ${{env.version}} > configs/link_full.txt
-        echo "link_full=$(cat configs/link_full.txt)" >> $GITHUB_ENV
-    - name: Save new minimal setup
+    - name: Save new Driver-file
       if: env.link != env.old_link && env.tag != env.latest_tag
       run:  |-
         curl --create-dirs -O --output-dir "driver" '${{ env.link }}' -K configs/headers.txt --compressed
-    - name: Save new full setup
-      if: env.link != env.old_link && env.tag != env.latest_tag
-      run:  |-
-        curl --create-dirs -O --output-dir "driver" '${{ env.link_full }}' -K configs/headers.txt --compressed
     - name: Generate new changelog
       if: env.link != env.old_link && env.tag != env.latest_tag
       run: |-
@@ -68,7 +59,7 @@ jobs:
         gh release upload ${{ env.tag }} ./driver/*.exe
     - name: Remove driver folder
       if: env.link != env.old_link && env.tag != env.latest_tag
-      run: rm -rf ./driver    
+      run: rm -rf ./driver
     - name: Commit report
       if: env.link != env.old_link && env.tag != env.latest_tag
       run: |-
