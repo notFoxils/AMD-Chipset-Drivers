@@ -1,133 +1,109 @@
 
-## Highlights
+## Release Highlights
 
-* ### New Game Support
-  
-  + Marvel Rivals
-  + Microsoft Flight Simulator 2024
-  + Dragon Age™: The Veilguard
-  + Slitterhead
-  + Delta Force
-  + S.T.A.L.K.E.R. 2: Heart of Chornobyl
-* ### AI Development on Radeon
-  
-  + Official support for Windows Subsystem for Linux (WSL 2) enables users with supported hardware to develop with AMD ROCm™ software on a Windows system, eliminating the need for dual boot set ups.
-  + WSL 2 Support has been added for:
-    - ONNX Runtime
-    - TensorFlow
-    - Beta support on Triton
-  + Find more information on ROCm on Radeon compatibility [here](https://rocm.docs.amd.com/projects/radeon/en/latest/docs/compatibility/wsl/wsl_compatibility.html) and configuration of Windows Subsystem for Linux (WSL 2) [here](https://rocm.docs.amd.com/projects/radeon/en/latest/docs/install/wsl/howto_wsl.html).
-* ### Expanded HYPR-Tune Support
-  
-  + HYPR-Tune support allows HYPR-RX to enable in-game technologies like AMD FidelityFX™ Super Resolution and AMD Radeon™ Anti-Lag 2.
-  + Support has been added to automatically configure AMD FidelityFX™ Super Resolution with frame generation in:
-    - Horizon Zero Dawn™ Remastered
-    - MechWarrior 5: Clans
-    - Red Dead Redemption 2
-  + Click [HERE](https://www.amd.com/en/products/software/adrenalin/hypr-rx.html) for more information regarding HYPR-RX.
-  
-* ### Expanded Vulkan Extension Support
-  
-  + [VK\_EXT\_fragment\_shader\_interlock](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_EXT_fragment_shader_interlock.html)
-  + [VK\_KHR\_compute\_shader\_derivatives](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_KHR_compute_shader_derivatives.html)
-  + Click [HERE](https://www.amd.com/en/resources/support-articles/release-notes/RN-RAD-WIN-VULKAN.html "https://www.amd.com/en/resources/support-articles/release-notes/RN-RAD-WIN-VULKAN.html") for more information about other Vulkan® extension support.
-  
-* ### Fixed Issues and Improvements
-  
-  + Lower than expected performance may be observed while using llama.cpp. This may also impact Ollama and LM Studio.
-  + Texture corruption may appear while playing The Crew™ Motorfest.
-  + System crash may be observed when first launching SteamVR while using Valve Index® at 144Hz on Radeon™ RX 6000 series graphics products.
-  + Intermittent application freeze may be observed while loading a save file in Monster Hunter: World.
-  + Intermittent application crash may be observed while playing Fortnite on Radeon™ RX 5000 series and above series graphics products.
-  + H.264 encoding may not work as expected while using OBS Studio with Twitch Enhanced Broadcasting.
+* New program support added.
+* CETCOMPACT support was added for a few drivers for Windows 11.
+* Bug fixes.
 
 ## Known Issues
 
-* Intermittent driver timeout or crash may be observed while playing Warhammer 40,000: Space Marine 2 on some AMD Graphics Products, such as the AMD Ryzen™ AI 9 HX 370. Users experiencing this issue can enable Variable Graphics Memory in AMD Software: Adrenalin Edition as a temporary measure (AMD Software: Adrenalin Edition -> Performance -> Tuning -> Variable Graphics Memory).
-* Intermittent stutter may be observed while playing Marvel Rivals when AMD FidelityFX™ Super Resolution 3 frame generation is enabled. Users experiencing this issue are recommended to disable AMD FidelityFX™ Super Resolution 3 frame generation in the per-game settings as a temporary workaround.
-* After using the AMD Cleanup Utility for Windows®, the AMD Bug Report Tool may appear intermittently during a new driver install on AMD Ryzen™ 7000 and above series processors paired with AMD Graphics Products.
-* HEVC encoding may not work as expected while using OBS Studio with Twitch Enhanced Broadcasting.
-* Limitations for Windows Subsystem for Linux (WSL 2) support can be found  [here](https://rocm.docs.amd.com/projects/radeon/en/latest/docs/limitations.html#release-known-issues).
+* Some driver names on a non-English OS may appear in English.
+* The uninstall summary may incorrectly display the uninstall status as Failed.
+* Occasionally, Ryzen PPKG may not install/upgrade.
+
+## Chipset Support
+
+|  | **Windows 10** | **Windows 11** |
+| --- | --- | --- |
+| AMD WRX90/TRX50 | Yes | Yes |
+| AMD WRX80 | Yes | Yes |
+| AMD TRX40 | Yes | Yes |
+| AMD X870E / X870 | Yes | Yes |
+| AMD X670E / X670 | Yes | Yes |
+| AMD B650E / B650 | Yes | Yes |
+| AMD X570 | Yes | Yes |
+| AMD B550 | Yes | Yes |
+| AMD A520 | Yes | Yes |
+| AMD X399 | Yes | Yes |
+| AMD X470 | Yes | Yes |
+| AMD B450 | Yes | Yes |
+| AMD X370 | Yes | Yes |
+| AMD B350 | Yes | Yes |
+| AMD A320 | Yes | Yes |
+
+## Processor Support
+
+|  | **Windows 10** | **Windows 11** |
+| --- | --- | --- |
+| AMD Ryzen™ Threadripper™ PRO Processors | Yes | Yes |
+| AMD Ryzen™ AI 300 Series processors | No | Yes |
+| AMD Ryzen™ 7 9800X3D Processor | Yes | Yes |
+| AMD Ryzen™ 9000 Series processors | Yes | Yes |
+| AMD Ryzen™ 8000G Series processors | Yes | Yes |
+| AMD Ryzen™ 8X40 Series processors | Yes | Yes |
+| AMD Ryzen™ 7040 Series processors | Yes | Yes |
+| AMD Ryzen™ 7000 Series Desktop Processors | Yes | Yes |
+| AMD Ryzen™ 7000 Series Mobile Processors | Yes | Yes |
+| AMD Ryzen™ 5000 Series Desktop Processors | Yes | Yes |
+| 2nd/3rd Gen AMD Ryzen™ Threadripper™ Processors | Yes | Yes |
+| 1st Gen AMD Ryzen™ Threadripper™ Processors | Yes | No |
+| 2nd/3rd Gen AMD Ryzen™ Desktop Processors | Yes | Yes |
+| 1st Gen AMD Ryzen™ Desktop Processors | Yes | No |
+| AMD Ryzen™ 3000G/4000G/5000G Series Desktop Processors with Radeon™ Graphics | Yes | Yes |
+| AMD Ryzen™ 2000G Series Desktop Processors with Radeon™ Graphics | Yes | No |
+| AMD Ryzen™ Mobile 3000U/C, 4000U/H, 5000U/H/HS, 6000U/H/HS/HX Series Processors with Radeon™ Graphics | Yes | Yes |
+| AMD Ryzen™ Mobile 2000U Series Processors with Radeon™ Graphics | Yes | No |
+| 7th Gen AMD A-Series Processors | Yes | No |
 
 ## Package Contents
 
-* AMD Software: Adrenalin Edition 24.12.1 Driver Version 24.20.33.01 for Windows® 10 and Windows® 11 (Windows Driver Store Version 32.0.12033.1030).
+The AMD Ryzen™ Chipset Driver installation package contains various independent drivers designed to support the following Microsoft® Windows® platforms. Operating System support may vary depending on your specific AMD product
 
-## The AMD Software: Adrenalin Edition 24.12.1 installation package can be downloaded from the following link:
+|  | **Windows**  **10** | **Windows**  **11** | **Change Details** |
+| --- | --- | --- | --- |
+| AMD Ryzen Power Plan / AMD Processor Power Management Support | 8.0.0.13 | 8.0.0.13 | No change |
+| AMD PCI Device Driver | 1.0.0.90 | 1.0.0.90 | No change |
+| AMD I2C Driver | 1.2.0.126 | 1.2.0.126 | CETCOMPAT support added |
+| AMD UART Driver | 1.2.0.119 | 1.2.0.119 | CETCOMPAT support added |
+| AMD GPIO2 Driver | 2.2.0.134 | 2.2.0.134 | CETCOMPAT support added |
+| PT GPIO Driver | 3.0.3.0 | 3.0.3.0 | CETCOMPAT support added |
+| AMD PSP Driver | 5.34.0.0 | 5.34.0.0 | CETCOMPAT support added |
+| AMD IOV Driver | 1.2.0.52 | Not Applicable | No change |
+| AMD SMBUS Driver | 5.12.0.44 | 5.12.0.44 | No change |
+| AMD AS4 ACPI Driver | 1.2.0.46 | Not Applicable | No change |
+| AMD SFH I2C Driver | 1.0.0.86 | 1.0.0.86 | No change |
+| AMD USB Filter Driver | 2.1.11.304 | Not Applicable | No change |
+| AMD SFH Driver | 1.0.0.341 | 1.0.0.341 | Bug Fixes |
+| AMD CIR Driver | 3.2.4.135 | Not Applicable | No change |
+| AMD MicroPEP Driver | 1.0.44.0 | 1.0.44.0 | Bug Fixes |
+| AMD Wireless Button Driver | 1.0.0.6 | 1.0.0.6 | CETCOMPAT support added |
+| AMD PMF-6000 Series Driver | 24.0.5.0 | 24.0.5.0 | CETCOMPAT support added |
+| AMD PPM Provisioning File Driver | 8.0.0.45 | 8.0.0.45 | New program support added |
+| AMD USB4 CM Driver | 1.0.0.42 | Not Applicable | Bug fixes |
+| AMD AMS Mailbox Driver | 4.0.0.833 | 4.0.0.833 | Bug Fixes |
+| AMD S0i3 Filter Driver | 1.0.0.22 | 1.0.0.20 | No change |
+| AMD 3D V-Cache Performance Optimizer Driver | 1.0.0.9 | 1.0.0.9 | No change |
+| AMD SFH1.1 Driver | 1.1.0.22 | 1.1.0.22 | Bug Fixes |
+| AMD PMF-7040 Series Driver | 24.2.5.0 | 24.2.5.0 | CETCOMPAT support added |
+| AMD Interface Driver (AMD PCI, AMD SMBuS, AMD Hetero, AMD RCEC) | 2.0.0.21 | 2.0.0.21 | New Device IDs added |
+| AMD PMF-7736 Series Driver | Not Applicable | 24.1.20.0 | CETCOMPAT support added |
+| AMD PMF-8000Series Driver | 23.5.16.0 | 24.5.16.0 | CETCOMPAT support added |
+| AMD Provisioning for OEM | 1.0.0.6 | 1.0.0.6 | No change |
+| AMD PMF Ryzen AI 300 Series Driver 1 | Not Applicable | 24.6.21.0 | CETCOMPAT support added |
 
-By clicking the Download button, you are confirming that you have read and agreed to be bound by the terms and conditions of the [End User License Agreement](/zh-tw/resources/support-articles/amd-software-eula.html) (“EULA”).  If you do not agree to the terms and conditions of these licenses, you do not have a license to any of the AMD software provided by this download.  
+ **AMD Ryzen™ Chipset Driver 6.10.17.152 installation package can be downloaded from the following link:**
 
+By clicking the Download button, you are confirming that you have read and agreed to be bound by the terms and conditions of the [End User License Agreement](https://www.amd.com/en/resources/support-articles/amd-software-eula.html) (“EULA”). If you do not agree to the terms and conditions of these licenses, you do not have a license to any of the AMD software provided by this download.
 
-* [AMD Software: Adrenalin Edition 24.12.1 Driver for Windows® 10 & Windows® 11 64-bit](https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-24.12.1-win10-win11-dec-rdna.exe)
+* [AMD Ryzen™ Chipset Driver 6.10.17.152 for Windows® 10 & Windows® 11 64-bit](https://drivers.amd.com/drivers/AMD_Chipset_Software_6.10.17.152.exe)
 
-Systems pairing RDNA series graphics products with Polaris or Vega series graphics products:
+ **Installing AMD Ryzen Chipset Drivers**
 
-* [AMD Software: Adrenalin Edition 24.12.1 Driver Including Vega and Polaris Series Graphics Support for Windows® 10 & Windows® 11 64-bit](https://drivers.amd.com/drivers/whql-amd-software-adrenalin-edition-24.12.1-win10-win11-dec-rdna-combined.exe)
+For detailed instructions on installing AMD Ryzen Chipset drivers, refer to the following article:
 
-## Installing AMD Software: Adrenalin Edition
-
-For detailed instructions on how to correctly uninstall or install AMD Software: Adrenalin Edition, please refer to the following support resources:
-
-* [How-To Uninstall AMD Software on a Windows® Based System](/en/resources/support-articles/faqs/RSX2-UNINSTALL.html)
-* [How-To Install AMD Software on a Windows® Based System](/en/resources/support-articles/faqs/RSX2-INSTALL.html)
-
-**NOTE**: This driver is not intended for use on AMD Radeon products running in Apple Boot Camp platforms. Users of these platforms should contact their system manufacturer for driver support. When installing AMD Software: Adrenalin Edition 24.12.1 for the Windows® operating system, the user must be logged on as Administrator, or have Administrator rights to complete the installation of AMD Software: Adrenalin Edition 24.12.1.
-
-
-## Radeon Product Compatibility
-
-AMD Software: Adrenalin Edition 24.12.1 is compatible with the following AMD Radeon products.
-
-| Radeon™ RX 7900/7800/7700/7600 Series Graphics |
-| --- |
-| Radeon™ RX 6900/6800/6700/6600/6500/6400 Series Graphics |
-| Radeon™ RX 5700/5600/5500/5300 Series Graphics |
-
-## Mobility Radeon™ Product Compatibility
-
-AMD Software: Adrenalin Edition 24.12.1 is a notebook reference graphics driver with limited support for system vendor specific features.
-
-| AMD Radeon™ RX 7900M/7800M/7600M Series Graphics |
-| --- |
-| AMD Radeon™ RX 6800M/6700M/6600M/6500M/6300M Series Graphics |
-| AMD Radeon™ RX 5700M/5600M/5500M/5300M Series Graphics |
-
-## ​​​​AMD Processors with Radeon Graphics Product Compatibility
-
-#### Important Note for Laptop and All-In-One (AIO) PCs
-
-AMD recommends OEM-provided drivers which are customized and validated for their system-specific features and optimizations.  
-
-  
-
-If you experience issues using the AMD Software: Adrenalin Edition driver package downloaded from AMD.com, please install the OEM-provided drivers for full support and compatibility.  
-
-  
-
-AMD Software: Adrenalin Edition does not include support for handheld gaming devices.  Users should check with the OEM for device specific drivers.
-
-| DESKTOP | MOBILE |
-| --- | --- |
-| AMD Ryzen™ Processors with Radeon™ Graphics | AMD Ryzen™ AI Series Processors with Radeon™ Graphics |
-| AMD Ryzen™ PRO Processors | AMD Ryzen™ Processors with Radeon™ Graphics |
-| AMD Athlon™ Processors with Radeon™ Graphics | AMD Ryzen™ PRO Processors |
-| AMD Athlon™ PRO Processors | AMD Athlon™ Processors with Radeon™ Graphics |
-|  | AMD Athlon™ PRO Processors |
-
-## Compatible Operating Systems
-
-AMD Software: Adrenalin Edition 24.12.1 is designed to support the following Microsoft® Windows® platforms. Operating System support may vary depending on your specific AMD Radeon product.
-
-## WHQL Results
-
-|  | **Status** |
-| --- | --- |
-| WHQL Test Suite Results | Passed |
-| WHQL Microsoft Certification | Passed |
+* [How to Install AMD Ryzen™ Chipset Drivers on a Windows® Based System](https://www.amd.com/en/resources/support-articles/faqs/chipset-install.html)
 
 ## SHA256 checksum:
 
-* whql-amd-software-adrenalin-edition-24.12.1-win10-win11-dec-rdna-combined.exe: adeeefb6c60908c2eb92058e6856233f7693a9a9ca1142afe54128b1ad0d325c
-* amd-software-adrenalin-edition-24.12.1-minimalsetup-241204\_web.exe: 576774e50c8c7ace9e9c0f7be61f36f1b0aecae1da9b64fa2012923bbcafbe60
-* whql-amd-software-adrenalin-edition-24.12.1-win10-win11-dec-rdna.exe: 55eb3002898e9fe8de4a2995454e5998950e26336ea85da6850fcfd1bcba260a
+* amd\_chipset\_software\_6.10.17.152.exe: e5bb2e43218248103a0aa8841b906ae96c7391598de416e51373b255819554bf
 
