@@ -1,5 +1,5 @@
-# AMD Software: Adrenalin for Windows 10/11
-Driver Updates for AMD Radeon™ Series Graphics and Ryzen™ Chipsets.\
+# AMD Chipset Software for Windows 10/11
+Driver Updates for AMD Ryzen™ Chipsets.\
 This repository is not official, but it provides the official drivers extracted directly from the [AMD Drivers and Support](https://www.amd.com/en/support) website.
 # Fully Automated Repo
 This repository is fully automated, it checks and updates the drivers daily if necessary.\
@@ -10,4 +10,3 @@ Official download: [Get Drivers with AMD Auto-Detect and Install Tool](https://w
 This software doesn't belong to me, I just make it available through github as a personal project. \
 [AMD EULA](https://www.amd.com/en/support/amd-software-eula) \
 All rights reserved to Advanced Micro Devices, Inc.
-
