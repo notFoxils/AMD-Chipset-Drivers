@@ -47,7 +47,9 @@ jobs:
     - name: Save new Driver-file
       if: env.link != env.old_link && env.tag != env.latest_tag
       run:  |-
-        curl --create-dirs -O --output-dir "driver" '${{ env.link }}' -K configs/headers.txt --compressed
+        filename=$(basename "${{ env.link }}")
+        curl --create-dirs -O --output-dir "driver" "$filename" -K configs/headers.txt --compressed
+        sha256sum "/driver/${filename}" > "${filename}.sha256sum"
     - name: Generate new changelog
       if: env.link != env.old_link && env.tag != env.latest_tag
       run: |-
@@ -57,6 +59,7 @@ jobs:
       run: |-
         gh release create ${{ env.tag }} -t ${{ env.tag }} -F configs/generated_changelog.md
         gh release upload ${{ env.tag }} ./driver/*.exe
+        gh release upload ${{ env.tag }} ./driver/*.exe.sha256sum
     - name: Remove driver folder
       if: env.link != env.old_link && env.tag != env.latest_tag
       run: rm -rf ./driver
