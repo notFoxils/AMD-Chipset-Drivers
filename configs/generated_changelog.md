@@ -1,20 +1,23 @@
-
 ## Release Highlights
 
 * New program support added.
-* CETCOMPACT support was added for a few drivers for Windows 11.
 * Bug fixes.
 
 ## Known Issues
 
-* Some driver names on a non-English OS may appear in English.
-* The uninstall summary may incorrectly display the uninstall status as Failed.
-* Occasionally, Ryzen PPKG may not install/upgrade.
+* After installing the AMD Chipset Installer version “7.xx.xx.xx”, users cannot install version “6.xx.xx.xx” or earlier.  
+  Workaround:  
+  + Un-install the latest version of the AMD Chipset installer (version 7.xx.xx.xx or later).
+  + Delete the “Qt\_Dependencies” folder located at "C:\Program Files (x86)\AMD\Chipset\_Software\".
+  + Install any older version of the AMD Chipset installer (version 6.xx.xx.xx or earlier).
+* On a non-English OS, some driver names may appear in English.
+* Occasionally, Ryzen PPKG may not install or upgrade.
 
 ## Chipset Support
 
-|  | **Windows 10** | **Windows 11** |
+|  |  |  |
 | --- | --- | --- |
+|  | **Windows 10** | **Windows 11** |
 | AMD WRX90/TRX50 | Yes | Yes |
 | AMD WRX80 | Yes | Yes |
 | AMD TRX40 | Yes | Yes |
@@ -33,8 +36,9 @@
 
 ## Processor Support
 
-|  | **Windows 10** | **Windows 11** |
+|  |  |  |
 | --- | --- | --- |
+|  | **Windows 10** | **Windows 11** |
 | AMD Ryzen™ Threadripper™ PRO Processors | Yes | Yes |
 | AMD Ryzen™ AI 300 Series processors | No | Yes |
 | AMD Ryzen™ 7 9800X3D Processor | Yes | Yes |
@@ -59,45 +63,49 @@
 
 The AMD Ryzen™ Chipset Driver installation package contains various independent drivers designed to support the following Microsoft® Windows® platforms. Operating System support may vary depending on your specific AMD product
 
-|  | **Windows**  **10** | **Windows**  **11** | **Change Details** |
+|  |  |  |  |
 | --- | --- | --- | --- |
+|  | **Windows**  **10** | **Windows**  **11** | **Change Details** |
 | AMD Ryzen Power Plan / AMD Processor Power Management Support | 8.0.0.13 | 8.0.0.13 | No change |
 | AMD PCI Device Driver | 1.0.0.90 | 1.0.0.90 | No change |
-| AMD I2C Driver | 1.2.0.126 | 1.2.0.126 | CETCOMPAT support added |
-| AMD UART Driver | 1.2.0.119 | 1.2.0.119 | CETCOMPAT support added |
-| AMD GPIO2 Driver | 2.2.0.134 | 2.2.0.134 | CETCOMPAT support added |
-| PT GPIO Driver | 3.0.3.0 | 3.0.3.0 | CETCOMPAT support added |
-| AMD PSP Driver | 5.34.0.0 | 5.34.0.0 | CETCOMPAT support added |
+| AMD I2C Driver | 1.2.0.126 | 1.2.0.126 | No change |
+| AMD UART Driver | 1.2.0.119 | 1.2.0.119 | No change |
+| AMD GPIO2 Driver | 2.2.0.134 | 2.2.0.134 | No change |
+| PT GPIO Driver | 3.0.3.0 | 3.0.3.0 | No change |
+| AMD PSP Driver | 5.38.0.0 | 5.38.0.0 | Bug Fixes |
 | AMD IOV Driver | 1.2.0.52 | Not Applicable | No change |
 | AMD SMBUS Driver | 5.12.0.44 | 5.12.0.44 | No change |
 | AMD AS4 ACPI Driver | 1.2.0.46 | Not Applicable | No change |
 | AMD SFH I2C Driver | 1.0.0.86 | 1.0.0.86 | No change |
 | AMD USB Filter Driver | 2.1.11.304 | Not Applicable | No change |
-| AMD SFH Driver | 1.0.0.341 | 1.0.0.341 | Bug Fixes |
+| AMD SFH Driver | 1.0.0.341 | 1.0.0.341 | No change |
 | AMD CIR Driver | 3.2.4.135 | Not Applicable | No change |
-| AMD MicroPEP Driver | 1.0.44.0 | 1.0.44.0 | Bug Fixes |
-| AMD Wireless Button Driver | 1.0.0.6 | 1.0.0.6 | CETCOMPAT support added |
-| AMD PMF-6000 Series Driver | 24.0.5.0 | 24.0.5.0 | CETCOMPAT support added |
-| AMD PPM Provisioning File Driver | 8.0.0.45 | 8.0.0.45 | New program support added |
-| AMD USB4 CM Driver | 1.0.0.42 | Not Applicable | Bug fixes |
-| AMD AMS Mailbox Driver | 4.0.0.833 | 4.0.0.833 | Bug Fixes |
-| AMD S0i3 Filter Driver | 1.0.0.22 | 1.0.0.20 | No change |
-| AMD 3D V-Cache Performance Optimizer Driver | 1.0.0.9 | 1.0.0.9 | No change |
-| AMD SFH1.1 Driver | 1.1.0.22 | 1.1.0.22 | Bug Fixes |
-| AMD PMF-7040 Series Driver | 24.2.5.0 | 24.2.5.0 | CETCOMPAT support added |
-| AMD Interface Driver (AMD PCI, AMD SMBuS, AMD Hetero, AMD RCEC) | 2.0.0.21 | 2.0.0.21 | New Device IDs added |
-| AMD PMF-7736 Series Driver | Not Applicable | 24.1.20.0 | CETCOMPAT support added |
-| AMD PMF-8000Series Driver | 23.5.16.0 | 24.5.16.0 | CETCOMPAT support added |
+| AMD MicroPEP Driver | 1.0.44.0 | 1.0.44.0 | No change |
+| AMD Wireless Button Driver | 1.0.0.6 | 1.0.0.6 | No change |
+| AMD PMF-6000 Series Driver | 24.0.5.0 | 24.0.5.0 | No change |
+| AMD PPM Provisioning File Driver | 8.0.0.48 | 8.0.0.48 | Bug Fixes |
+| AMD USB4 CM Driver | 1.0.0.42 | Not Applicable | No Change |
+| AMD AMS Mailbox Driver | 4.5.0.120 | 4.5.0.120 | Bug Fixes |
+| AMD S0i3 Filter Driver | 1.1.0.3 | 1.1.0.3 | Win10 OS Support Added |
+| AMD 3D V-Cache Performance Optimizer Driver | 1.0.0.10 | 1.0.0.10 | Bug Fixes |
+| AMD SFH1.1 Driver | 1.1.0.24 | 1.1.0.24 | Bug Fixes |
+| AMD PMF-7040 Series Driver | 24.2.5.0 | 24.2.5.0 | No Change |
+| AMD Interface Driver (AMD PCI, AMD SMBuS, AMD Hetero, AMD RCEC) | 2.0.0.22 | 2.0.0.22 | New program support added |
+| AMD PMF-7736 Series Driver | Not Applicable | 24.1.20.0 | No Change |
+| AMD PMF-8000Series Driver | 25.5.22.0 | 25.5.22.0 | Bug Fixes |
 | AMD Provisioning for OEM | 1.0.0.6 | 1.0.0.6 | No change |
-| AMD PMF Ryzen AI 300 Series Driver 1 | Not Applicable | 24.6.21.0 | CETCOMPAT support added |
+| AMD PMF Ryzen AI 300 Series Driver 1 | Not Applicable | 25.6.25.0 | Bug Fixes |
+| AMD Application Compatibility Database Driver | 1.0.0.3 | 1.0.0.3 | New product added |
+| AMD NULL Driver for Microsoft Pluton Security Processor 1 | 1.0.0.0 | Not Applicable | New product added |
+| AMD NULL Driver for Microsoft Pluton Security Processor 2 | Not Applicable | 1.0.0.2 | New product added |
 
- **AMD Ryzen™ Chipset Driver 6.10.17.152 installation package can be downloaded from the following link:**
+**AMD Ryzen™ Chipset Driver 7.02.13.148 installation package can be downloaded from the following link:**
 
 By clicking the Download button, you are confirming that you have read and agreed to be bound by the terms and conditions of the [End User License Agreement](https://www.amd.com/en/resources/support-articles/amd-software-eula.html) (“EULA”). If you do not agree to the terms and conditions of these licenses, you do not have a license to any of the AMD software provided by this download.
 
-* [AMD Ryzen™ Chipset Driver 6.10.17.152 for Windows® 10 & Windows® 11 64-bit](https://drivers.amd.com/drivers/AMD_Chipset_Software_6.10.17.152.exe)
+* [AMD Ryzen™ Chipset Driver 7.02.13.148 for Windows® 10 & Windows® 11 64-bit](https://drivers.amd.com/drivers/amd_chipset_software_7.02.13.148.exe)
 
- **Installing AMD Ryzen Chipset Drivers**
+**Installing AMD Ryzen Chipset Drivers**
 
 For detailed instructions on installing AMD Ryzen Chipset drivers, refer to the following article:
 
@@ -105,5 +113,4 @@ For detailed instructions on installing AMD Ryzen Chipset drivers, refer to th
 
 ## SHA256 checksum:
 
-* amd\_chipset\_software\_6.10.17.152.exe: e5bb2e43218248103a0aa8841b906ae96c7391598de416e51373b255819554bf
-
+* amd\_chipset\_software\_7.02.13.148.exe: 712b60740e647664a24193c2b43d22479bf3d55ffcf8994963a902bcee9eb9ea
