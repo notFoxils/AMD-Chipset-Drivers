@@ -17,7 +17,7 @@ html = requests.get(
 
 soup = BeautifulSoup(html, 'html.parser')
 elements = soup.select(
-    'div.container-fluid > div > div:nth-child(5) > div > a')
+    'article.container-fluid > div > div:nth-child(5) > div > a')
 link = elements[0]['href']
 
 if link:
