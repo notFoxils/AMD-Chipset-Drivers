@@ -1,6 +1,7 @@
 ## Release Highlights
 
 * Bug fixes.
+* CETCOMPAT support is added for AMD PPM Provisioning File Driver
 
 ## Known Issues
 
@@ -71,7 +72,7 @@ The AMD Ryzen™ Chipset Driver installation package contains various independen
 | AMD UART Driver | 1.2.0.119 | 1.2.0.119 | No change |
 | AMD GPIO2 Driver | 2.2.0.134 | 2.2.0.134 | No change |
 | PT GPIO Driver | 3.0.3.0 | 3.0.3.0 | No change |
-| AMD PSP Driver | 5.39.0.0 | 5.39.0.0 | Bug Fixes |
+| AMD PSP Driver | 5.39.0.0 | 5.39.0.0 | No change |
 | AMD IOV Driver | 1.2.0.52 | Not Applicable | No change |
 | AMD SMBUS Driver | 5.12.0.44 | 5.12.0.44 | No change |
 | AMD AS4 ACPI Driver | 1.2.0.46 | Not Applicable | No change |
@@ -81,28 +82,28 @@ The AMD Ryzen™ Chipset Driver installation package contains various independen
 | AMD CIR Driver | 3.2.4.135 | Not Applicable | No change |
 | AMD MicroPEP Driver | 1.0.44.0 | 1.0.44.0 | No change |
 | AMD Wireless Button Driver | 1.0.0.6 | 1.0.0.6 | No change |
-| AMD PMF-6000 Series Driver | 24.0.5.0 | 24.0.5.0 | No change |
-| AMD PPM Provisioning File Driver | 8.0.0.52 | 8.0.0.52 | Bug Fixes |
+| AMD PMF-6000 Series Driver | 24.0.6.0 | 24.0.6.0 | Bug Fixes |
+| AMD PPM Provisioning File Driver | 8.0.0.53 | 8.0.0.53 | CETCOMPAT support is added |
 | AMD USB4 CM Driver | 1.0.0.42 | Not Applicable | No Change |
 | AMD AMS Mailbox Driver | 4.5.0.1020 | 4.5.0.1020 | No Change |
-| AMD S0i3 Filter Driver | 1.1.0.3 | 1.1.0.3 | No Change |
-| AMD 3D V-Cache Performance Optimizer Driver | 1.0.0.10 | 1.0.0.10 | No Change |
-| AMD SFH1.1 Driver | 1.1.0.26 | 1.1.0.26 | Bug Fixes |
-| AMD PMF-7040 Series Driver | 24.2.5.0 | 24.2.5.0 | No Change |
-| AMD Interface Driver (AMD PCI, AMD SMBuS, AMD Hetero, AMD RCEC) | 2.0.0.23 | 2.0.0.23 | New device IDs added |
+| AMD S0i3 Filter Driver | 1.1.0.7 | 1.1.0.7 | Bug Fixes |
+| AMD 3D V-Cache Performance Optimizer Driver | 1.0.0.11 | 1.0.0.11 | Bug Fixes |
+| AMD SFH1.1 Driver | 1.1.0.26 | 1.1.0.26 | No Change |
+| AMD PMF-7040 Series Driver | 24.2.6.0 | 24.2.6.0 | Bug Fixes |
+| AMD Interface Driver (AMD PCI, AMD SMBuS, AMD Hetero, AMD RCEC) | 2.0.0.23 | 2.0.0.23 | No Change |
 | AMD PMF-7736 Series Driver | Not Applicable | 24.1.20.0 | No Change |
-| AMD PMF-8000Series Driver | 25.5.23.0 | 25.5.23.0 | Bug Fixes |
+| AMD PMF-8000Series Driver | 25.5.25.0 | 25.5.25.0 | Bug Fixes |
 | AMD Provisioning for OEM | 1.0.0.6 | 1.0.0.6 | No change |
-| AMD PMF Ryzen AI 300 Series Driver 1 | Not Applicable | 25.6.26.0 | Bug Fixes |
+| AMD PMF Ryzen AI 300 Series Driver 1 | Not Applicable | 25.6.28.0 | Bug Fixes |
 | AMD Application Compatibility Database Driver | 1.0.0.3 | 1.0.0.3 | No change |
 | AMD NULL Driver for Microsoft Pluton Security Processor 1 | 1.0.0.0 | Not Applicable | No change |
 | AMD NULL Driver for Microsoft Pluton Security Processor 2 | Not Applicable | 1.0.0.2 | No change |
 
-**AMD Ryzen™ Chipset Driver 7.04.09.545 installation package can be downloaded from the following link:**
+**AMD Ryzen™ Chipset Driver 7.06.02.123 installation package can be downloaded from the following link:**
 
 By clicking the Download button, you are confirming that you have read and agreed to be bound by the terms and conditions of the [End User License Agreement](https://www.amd.com/en/resources/support-articles/amd-software-eula.html) (“EULA”). If you do not agree to the terms and conditions of these licenses, you do not have a license to any of the AMD software provided by this download.
 
-* [AMD Ryzen™ Chipset Driver 7.04.09.545 for Windows® 10 & Windows® 11 64-bit](https://drivers.amd.com/drivers/AMD_Chipset_Software_7.04.09.545.exe)
+* [AMD Ryzen™ Chipset Driver 7.06.02.123 for Windows® 10 & Windows® 11 64-bit](https://drivers.amd.com/drivers/amd_chipset_software_7.06.02.123.exe)
 
 **Installing AMD Ryzen Chipset Drivers**
 
@@ -112,4 +113,4 @@ For detailed instructions on installing AMD Ryzen Chipset drivers, refer to th
 
 ## SHA256 checksum:
 
-* AMD\_Chipset\_Software\_7.04.09.545.exe: 880ae8823175ca4db831761ed1259a74bcbd824cab2468506ddf97c64b742450
+* amd\_chipset\_software\_7.06.02.123.exe: 3753b0e41ead2b1c3a94f57e08521119163276d9f3b7f769ae664beaac095a70
