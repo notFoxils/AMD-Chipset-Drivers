@@ -23,4 +23,4 @@ link = elements[0]['href']
 if link:
     print(link)
 else:
-    print("Link not found")
+    print("Link not found...")
