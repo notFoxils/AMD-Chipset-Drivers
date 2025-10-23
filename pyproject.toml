@@ -1,0 +1,21 @@
+[project]
+name = "amd-chipset-driver-scraper"
+version = "1.0.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "notFoxils", email = "voltrixz9514@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "bs4>=0.0.2",
+    "requests>=2.32.5",
+    "typer>=0.20.0",
+]
+
+[project.scripts]
+amd-chipset-driver-scraper = "amd_chipset_driver_scraper:main"
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10.0"]
+build-backend = "uv_build"
