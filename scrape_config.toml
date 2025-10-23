@@ -1,6 +1,7 @@
 driver_download_page_url = "https://www.amd.com/en/support/downloads/drivers.html/chipsets/am5/x870e.html"
-driver_download_anchor_selector = ".accordion-item:first-of-type .driver-download-details .button a:first-of-type"
-driver_release_notes_page_anchor_selector = ".accordion-item:first-of-type .card-body a:first-of-type"
+driver_version_paragraph_selector = ".accordion-item:first-of-type .driver-download-details:first-of-type .row p:first-of-type"
+driver_download_anchor_selector = ".accordion-item:first-of-type .driver-download-details:first-of-type .button a:first-of-type"
+driver_release_notes_page_anchor_selector = ".accordion-item:first-of-type .card-body:first-of-type a:first-of-type"
 
 [driver_download_page_headers]
 "User-Agent" = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36"
