@@ -5,16 +5,11 @@ import os
 from pathlib import Path
 import sys
 import tomllib
-from typing import Annotated, Any, Final, final, override
+from typing import Annotated, Any, Final, Self, final, override
 
 import bs4
 import requests
 import typer
-
-BASE_DIR: Final[Path] = Path(__file__).parent.resolve(True)
-
-DEFAULT_OUTPUT_DIR: Final[Path] = BASE_DIR.joinpath("output")
-DEFAULT_CONFIG_PATH: Final[Path] = BASE_DIR.joinpath("scrape_config.toml")
 
 Config = dict[str, Any] # pyright: ignore[reportExplicitAny]
 Headers = dict[str, str]
@@ -30,21 +25,19 @@ class DriverVersion:
     def __init__(self, version_elements: tuple[int, ...]) -> None:
         self.version_elements = version_elements
 
-    def __gt__(self, other: object) -> bool:
-        if (isinstance(other, DriverVersion)):
-            less_specific_driver_version = self if len(self.version_elements) < len(other.version_elements) else other
+    def __gt__(self, other: Self) -> bool:
+        self_num_elements: Final[int] = len(self.version_elements)
+        less_specific_driver_version_num_elements: Final[int] = min(self_num_elements, len(other.version_elements))
 
-            for version_element_index in range(len(less_specific_driver_version.version_elements)):
-                if self.version_elements[version_element_index] == other.version_elements[version_element_index]:
-                    continue
+        for version_element_index in range(less_specific_driver_version_num_elements):
+            if self.version_elements[version_element_index] == other.version_elements[version_element_index]:
+                continue
                     
                 # If (element of self) is greater than (element of other), return true
-                return self.version_elements[version_element_index] > other.version_elements[version_element_index]
+            return self.version_elements[version_element_index] > other.version_elements[version_element_index]
                 
-            # If self is more specific, return true
-            return less_specific_driver_version == other
-
-        return False
+        # If self is more specific, return true
+        return self_num_elements > less_specific_driver_version_num_elements
 
     @override
     def __str__(self) -> str:
@@ -61,6 +54,13 @@ class DriverVersion:
             ))
         except ValueError:
             return None
+
+BASE_DIR: Final[Path] = Path(__file__).parent.resolve(True)
+
+DEFAULT_OUTPUT_DIR: Final[Path] = BASE_DIR.joinpath("output")
+DEFAULT_CONFIG_PATH: Final[Path] = BASE_DIR.joinpath("scrape_config.toml")
+
+DEFAULT_DRIVER_VERSION: Final[DriverVersion] = DriverVersion(tuple([0]))
 
 def init_config(config_path: Path) -> Config:
     config: Final[Config];
@@ -118,11 +118,12 @@ def parse_anchor_link(page_elements: bs4.BeautifulSoup, anchor_selector: str) ->
     return str(anchor_href)
 
 def main(
-    config_path: Path = DEFAULT_CONFIG_PATH,
-    output_dir: Path = DEFAULT_OUTPUT_DIR,
-    previous_driver_version: Annotated[
-        DriverVersion, typer.Option(parser=DriverVersion.from_string)
-    ] = "0"  # pyright: ignore[reportArgumentType]
+    config_path:
+        Annotated[Path, typer.Option(exists=True, dir_okay=False, resolve_path=True)] = DEFAULT_CONFIG_PATH,
+    output_dir: 
+        Annotated[Path, typer.Option(file_okay=False, writable=True, resolve_path=True)] = DEFAULT_OUTPUT_DIR,
+    previous_driver_version:
+        Annotated[(DriverVersion | None), typer.Option(parser=DriverVersion.from_string)] = None
 ):
     # parse config : Done
     # Check if driver-version is newer:
@@ -159,20 +160,22 @@ def main(
         str(config.get('driver_version_paragraph_selector')),
     )
 
-    if driver_version <= previous_driver_version:
+    if (previous_driver_version is not None) and (driver_version <= previous_driver_version):
         print(
             f"The scrapable driver ({driver_version}) is " +
             ("older than " if driver_version < previous_driver_version else "equal to ") +
             f"the previous version ({previous_driver_version})."
         )
-        print("If you want to scrape this driver don't specify 'previous-driver-version' and try again.")
+        print("If you want to scrape this driver remove the 'previous-driver-version' option and try again.")
         sys.exit()
 
     if not output_dir.exists():
         os.mkdir(output_dir)
     else:
-        print(f"The output directory already exists{" as a file" if output_dir.is_file() else ""}.")
-        print(f"Remote the {"file" if output_dir.is_file() else "directory"} and try again.")
+        print(
+            f"The output directory already exists{" as a file" if output_dir.is_file() else ""}; " +
+            'remove it and try again.'
+        )
         sys.exit()
 
     driver_download_link: str = parse_anchor_link(
