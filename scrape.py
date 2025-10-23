@@ -134,11 +134,11 @@ def main(
     #       print-message
     #       exit
     #   If new proceed to: TODO
-    #       create output-folder
+    #       creating output-folder
     #       downloading driver
     #       downloading release notes
     #       creating hash-files for downloads
-    #       send version, downloads, download-hashes, and release-notes to output-folder
+    #       send version, downloads, and download-hashes to output-folder
     #       exit
     # Workflow continues: TODO
     #   Check if output folder has files/exists: TODO
