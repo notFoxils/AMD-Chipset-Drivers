@@ -26,7 +26,7 @@ def download(
     output_dir: 
         Annotated[Path, typer.Option(file_okay=False, writable=True, resolve_path=True)] = DEFAULT_OUTPUT_DIR,
     previous_driver_version:
-        Annotated[DriverVersion, typer.Option(parser=DriverVersion.from_string)] = DEFAULT_DRIVER_VERSION
+        Annotated[DriverVersion, typer.Option(parser=DriverVersion.typer_parse)] = DEFAULT_DRIVER_VERSION
 ):
     # parse config : Done
     # Check if driver-version is newer:
