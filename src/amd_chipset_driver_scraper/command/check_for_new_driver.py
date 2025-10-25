@@ -8,6 +8,7 @@ DEFAULT_DRIVER_VERSION: DriverVersion = DriverVersion(tuple([0]))
 
 app: typer.Typer = typer.Typer()
 
+
 @app.command()
 def check_for_new_driver(
     previous_driver_version:
