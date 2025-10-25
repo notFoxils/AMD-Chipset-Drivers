@@ -4,6 +4,7 @@ from typing import Final, Self, final, override
 
 import typer
 
+
 @final
 @dataclass
 @total_ordering
@@ -21,10 +22,10 @@ class DriverVersion:
         for version_element_index in range(less_specific_driver_version_num_elements):
             if self.version_elements[version_element_index] == other.version_elements[version_element_index]:
                 continue
-                    
+
                 # If (element of self) is greater than (element of other), return true
             return self.version_elements[version_element_index] > other.version_elements[version_element_index]
-                
+
         # If self is more specific, return true
         return self_num_elements > less_specific_driver_version_num_elements
 

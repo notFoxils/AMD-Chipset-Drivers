@@ -6,7 +6,8 @@ import requests
 from amd_chipset_driver_scraper.util.config import Headers
 from amd_chipset_driver_scraper.util.driver_version import DriverVersion
 
-Url = str
+type Url = str
+
 
 def get_html_page_elements(page_url: Url, headers: Headers) -> bs4.BeautifulSoup:
     driver_page_response: requests.Response = requests.get(
@@ -22,6 +23,7 @@ def get_html_page_elements(page_url: Url, headers: Headers) -> bs4.BeautifulSoup
         markup=driver_page_response.content,
         features='html.parser',
     )
+
 
 def parse_driver_version(page_elements: bs4.BeautifulSoup, driver_version_paragraph_selector: str) -> DriverVersion:
     selected_paragraph: (bs4.Tag | None) = page_elements.select_one(driver_version_paragraph_selector)
@@ -40,6 +42,7 @@ def parse_driver_version(page_elements: bs4.BeautifulSoup, driver_version_paragr
 
     return driver_version
 
+
 def parse_anchor_link(page_elements: bs4.BeautifulSoup, anchor_selector: str) -> Url:
     selected_anchor: (bs4.Tag | None) = page_elements.select_one(anchor_selector)
 
@@ -54,4 +57,3 @@ def parse_anchor_link(page_elements: bs4.BeautifulSoup, anchor_selector: str) ->
         sys.exit(5)
 
     return str(anchor_href)
-
