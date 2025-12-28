@@ -21,7 +21,7 @@ html = requests.get(
 soup = BeautifulSoup(html, 'html.parser')
 
 release_notes_url = soup.select(
-    '#collapsedriverdetails-0-0-0 > div:first-child > p > a')[0]['href']
+    '.accordion-item:first-of-type .card-body:first-of-type a:first-of-type')[0]['href']
 
 html = requests.get(release_notes_url, headers=headers).content
 
