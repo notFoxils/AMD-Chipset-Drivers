@@ -1,8 +1,7 @@
 ## Release Highlights
 
 * Bug fixes included.
-* Updated Install Shield software version.
-* This package doesn’t include AMS Mailbox driver and S0i3 filter driver support.
+* This package includes AMS Mailbox driver and S0i3 filter driver support.
 
 ## Known Issues
 
@@ -73,10 +72,10 @@ The AMD Ryzen™ Chipset Driver installation package contains various independen
 | AMD Ryzen Power Plan / AMD Processor Power Management Support | 8.0.0.13 | 8.0.0.13 | No change |
 | AMD PCI Device Driver | 1.0.0.90 | 1.0.0.90 | No change |
 | AMD I2C Driver | 1.2.0.126 | 1.2.0.126 | No change |
-| AMD UART Driver | 1.2.0.121 | 1.2.0.121 | Bug Fixes |
-| AMD GPIO2 Driver | 2.2.0.136 | 2.2.0.136 | Bug Fixes |
-| PT GPIO Driver | 3.0.3.0 | 3.0.5.0 | Bug Fixes |
-| AMD PSP Driver | 5.42.0.0 | 5.42.0.0 | Bug Fixes |
+| AMD UART Driver | 1.2.0.121 | 1.2.0.121 | No change |
+| AMD GPIO2 Driver | 2.2.0.136 | 2.2.0.136 | No change |
+| PT GPIO Driver | 3.0.3.0 | 3.0.5.0 | No change |
+| AMD PSP Driver | 5.43.0.0 | 5.43.0.0 | Bug Fixes |
 | AMD IOV Driver | 1.2.0.52 | Not Applicable | No change |
 | AMD SMBUS Driver | 5.12.0.44 | 5.12.0.44 | No change |
 | AMD AS4 ACPI Driver | 1.2.0.46 | Not Applicable | No change |
@@ -84,33 +83,33 @@ The AMD Ryzen™ Chipset Driver installation package contains various independen
 | AMD USB Filter Driver | 2.1.11.304 | Not Applicable | No change |
 | AMD SFH Driver | 1.0.0.341 | 1.0.0.341 | No change |
 | AMD CIR Driver | 3.2.4.135 | Not Applicable | No change |
-| AMD MicroPEP Driver | 1.0.47.1 | 1.0.47.1 | Bug Fixes |
+| AMD MicroPEP Driver | 1.0.47.1 | 1.0.47.1 | No change |
 | AMD Wireless Button Driver | 1.0.0.6 | 1.0.0.6 | No change |
-| AMD PMF-6000 Series Driver | 25.0.6.0 | 25.0.7.0 | Windows 11  25H2 OS support added |
-| AMD PPM Provisioning File Driver | 8.0.0.61 | 8.0.0.61 | Bug Fixes |
-| AMD USB4 CM Driver | 1.0.0.43 | Not Applicable | Bug Fixes |
-| AMD AMS Mailbox Driver | 5.0.0.1075 | 5.0.0.1075 | Bug Fixes |
-| AMD S0i3 Filter Driver | 1.1.0.7 | 1.1.0.7 | Bug Fixes |
-| AMD 3D V-Cache Performance Optimizer Driver | 1.0.0.12 | 1.0.0.12 | Windows 11 25H2 OS support added |
-| AMD SFH1.1 Driver | 1.1.0.26 | 1.1.0.33 | Bug Fixes |
-| AMD PMF-7040 Series Driver | 25.2.6.0 | 25.2.7.0 | Windows 11 25H2 OS support added |
-| AMD Interface Driver (AMD PCI, AMD SMBuS, AMD Hetero, AMD RCEC) | 2.0.0.26 | 2.0.0.26 | Bug Fixes |
-| AMD PMF-7736 Series Driver | Not Applicable | 24.1.20.0 | No Change |
-| AMD PMF-8000Series Driver | 25.5.25.0 | 25.5.27.0 | Windows 11 25H2 OS support added |
+| AMD PMF-6000 Series Driver | 25.0.6.0 | 25.0.7.0 | No change |
+| AMD PPM Provisioning File Driver | 8.0.0.61 | 8.0.0.61 | No change |
+| AMD USB4 CM Driver | 1.0.0.43 | Not Applicable | No change |
+| AMD AMS Mailbox Driver | 5.1.0.1480 | 5.1.0.1480 | Bug Fixes |
+| AMD S0i3 Filter Driver | 1.0.0.12 | 1.0.0.12 | Bug Fixes |
+| AMD 3D V-Cache Performance Optimizer Driver | 1.0.0.12 | 1.0.0.12 | No change |
+| AMD SFH1.1 Driver | 1.1.0.26 | 1.1.0.37 | Bug Fixes |
+| AMD PMF-7040 Series Driver | 25.2.6.0 | 25.2.7.0 | No change |
+| AMD Interface Driver (AMD PCI, AMD SMBuS, AMD Hetero, AMD RCEC) | 2.0.0.26 | 2.0.0.26 | No change |
+| AMD PMF-7736 Series Driver | Not Applicable | 24.1.20.0 | No change |
+| AMD PMF-8000Series Driver | 25.5.25.0 | 26.10.4.0 | Bug Fixes |
 | AMD Provisioning for OEM | 1.0.0.6 | 1.0.0.6 | No change |
-| AMD PMF Ryzen AI 300 Series Driver 1 | Not Applicable | 25.6.30.0 | Windows 11 25H2 OS support added |
+| AMD PMF Ryzen AI 300 Series Driver 1 | Not Applicable | 25.6.30.0 | No change |
 | AMD Application Compatibility Database Driver | 1.0.0.3 | 1.0.0.3 | No change |
 | AMD NULL Driver for Microsoft Pluton Security Processor 1 | 1.0.0.0 | Not Applicable | No change |
-| AMD NULL Driver for Microsoft Pluton Security Processor 2 | 1.0.0.2 | Not Applicable | OS support detail is updated |
-| AMD HSMP Driver | 1.0.0.5 | 1.0.0.5 | New driver added |
-| AMD PMF Ryzen AI MAX 300 Series Driver | Not Applicable | 25.7.23.0 | New driver added |
-| AMD PMF Ryzen AI 300 Series Driver 2 | Not Applicable | 25.8.16.0 | Bug Fixes |
+| AMD NULL Driver for Microsoft Pluton Security Processor 2 | 1.0.0.2 | Not Applicable | No change |
+| AMD HSMP Driver | 1.0.0.7 | 1.0.0.7 | Bug Fixes |
+| AMD PMF Ryzen AI MAX 300 Series Driver | Not Applicable | 26.10.4.0 | Bug Fixes |
+| AMD PMF Ryzen AI 300 Series Driver 2 | Not Applicable | 26.10.4.0 | Bug Fixes |
 
-**AMD Ryzen™ Chipset Driver 8.01.20.513 installation package can be downloaded from the following link:**
+**AMD Ryzen™ Chipset Driver 8.02.18.557 installation package can be downloaded from the following link:**
 
 By clicking the Download button, you are confirming that you have read and agreed to be bound by the terms and conditions of the [End User License Agreement](https://www.amd.com/en/resources/support-articles/amd-software-eula.html) (“EULA”). If you do not agree to the terms and conditions of these licenses, you do not have a license to any of the AMD software provided by this download.
 
-* [AMD Ryzen™ Chipset Driver 8.01.20.513 for Windows® 10 & Windows® 11 64-bit](https://drivers.amd.com/drivers/amd_chipset_software_8.01.20.513.exe)
+* [AMD Ryzen™ Chipset Driver 8.02.18.557 for Windows® 10 & Windows® 11 64-bit](https://drivers.amd.com/drivers/amd_chipset_software_8.02.18.557.exe)
 
 **Installing AMD Ryzen Chipset Drivers**
 
@@ -120,4 +119,4 @@ For detailed instructions on installing AMD Ryzen Chipset drivers, refer to th
 
 ## SHA256 checksum:
 
-* amd\_chipset\_software\_8.01.20.513.exe: ac9c4c4c17b024a724be815f3ad1cf6780efece6ddc73d8651e58b1b0497cf98
+* amd\_chipset\_software\_8.02.18.557.exe: 7fbf24e6d890b2339ad0c51a12029064d9e1cef51426ffff1265c9927eebfc62
