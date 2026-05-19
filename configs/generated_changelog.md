@@ -12,7 +12,6 @@
   + Install any older version of the AMD Chipset installer (version 6.xx.xx.xx or earlier).
 * On a non-English OS, some driver names may appear in English.
 * Occasionally, Ryzen PPKG may not install or upgrade.
-* AMS and S0i3 filter driver has issues on non-English OS
 
 ## Chipset Support
 
@@ -119,4 +118,4 @@ For detailed instructions on installing AMD Ryzen Chipset drivers, refer to th
 
 ## SHA256 checksum:
 
-* amd\_chipset\_software\_8.02.18.557.exe: 7fbf24e6d890b2339ad0c51a12029064d9e1cef51426ffff1265c9927eebfc62
+* amd\_chipset\_software\_8.05.04.516.exe: 1609fbf1375ca1f25e461d1de7d21da096d018624d8b63dfc3d81cb6a8bde3ad
